@@ -7,10 +7,6 @@
             <span class="eyebrow">Transformación digital para empresas de alto impacto</span>
             <h1>Evoluciona tu experiencia de cliente con una plataforma inteligente.</h1>
             <p>Diseñamos ecosistemas de comunicación, automatización y datos inspirados en líderes globales, adaptados al ritmo de Latinoamérica.</p>
-            <div class="hero-actions">
-                <a href="#contacto" class="btn">Solicitar demo</a>
-                <a href="#servicios" class="btn btn-ghost">Ver soluciones</a>
-            </div>
             <ul class="hero-metrics">
                 <li><strong>+120</strong><span>Proyectos empresariales</span></li>
                 <li><strong>98%</strong><span>Satisfacción de clientes</span></li>
@@ -63,19 +59,6 @@
     </div>
 </section>
 
-<section id="proceso" class="section">
-    <div class="container">
-        <span class="eyebrow reveal">Metodología</span>
-        <h2 class="reveal">Implementación en 4 fases.</h2>
-        <div class="timeline">
-            <div class="timeline-item reveal"><strong>01</strong><h3>Diagnóstico</h3><p>Mapeo de operación actual y quick wins.</p></div>
-            <div class="timeline-item reveal delay-1"><strong>02</strong><h3>Diseño</h3><p>Arquitectura funcional y roadmap incremental.</p></div>
-            <div class="timeline-item reveal delay-2"><strong>03</strong><h3>Despliegue</h3><p>Integración tecnológica y habilitación de equipos.</p></div>
-            <div class="timeline-item reveal"><strong>04</strong><h3>Optimización</h3><p>Mejora continua basada en KPIs y analítica.</p></div>
-        </div>
-    </div>
-</section>
-
 <section id="testimonios" class="section section-muted">
     <div class="container">
         <span class="eyebrow reveal">Casos de éxito</span>
@@ -93,12 +76,28 @@
             <span class="eyebrow">Contáctanos</span>
             <h2>Conversemos sobre el próximo salto digital de tu organización.</h2>
             <p>Déjanos tus datos y un especialista te contactará para diseñar una propuesta a tu medida.</p>
+            @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+            {
+                <p class="status-message">@Model.StatusMessage</p>
+            }
         </div>
-        <form>
-            <label>Nombre<input type="text" placeholder="Tu nombre" /></label>
-            <label>Empresa<input type="text" placeholder="Nombre de empresa" /></label>
-            <label>Correo<input type="email" placeholder="correo@empresa.com" /></label>
-            <button type="button" class="btn">Enviar solicitud</button>
+        <form method="post">
+            <label>
+                Nombre
+                <input asp-for="ContactForm.Name" placeholder="Tu nombre" />
+                <span asp-validation-for="ContactForm.Name" class="field-error"></span>
+            </label>
+            <label>
+                Empresa
+                <input asp-for="ContactForm.Company" placeholder="Nombre de empresa" />
+                <span asp-validation-for="ContactForm.Company" class="field-error"></span>
+            </label>
+            <label>
+                Correo
+                <input asp-for="ContactForm.Email" placeholder="correo@empresa.com" />
+                <span asp-validation-for="ContactForm.Email" class="field-error"></span>
+            </label>
+            <button type="submit" class="btn">Enviar solicitud</button>
         </form>
     </div>
 </section>
