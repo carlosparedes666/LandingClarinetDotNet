@@ -1,0 +1,69 @@
+@page
+@model IndexModel
+
+<section id="inicio" class="hero section">
+    <div class="container hero-grid">
+        <div class="hero-content reveal">
+            <span class="eyebrow">Transformación digital para empresas de alto impacto</span>
+            <h1>Evoluciona tu experiencia de cliente con una plataforma inteligente.</h1>
+            <p>Diseñamos ecosistemas de comunicación, automatización y datos inspirados en líderes globales, adaptados al ritmo de Latinoamérica.</p>
+            <ul class="hero-metrics">
+                <li><strong>+30</strong><span>Años de experiencia</span></li>
+                <li><strong>98%</strong><span>Satisfacción de clientes</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="nosotros" class="section section-muted">
+    <div class="container reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>Somos socios estratégicos para la nueva era de atención digital.</h2>
+        <p>Unimos consultoría, implementación y acompañamiento continuo para que cada interacción de tus clientes sea más ágil, humana y rentable.</p>
+    </div>
+</section>
+
+<section id="servicios" class="section">
+    <div class="container">
+        <span class="eyebrow reveal">Servicios</span>
+        <h2 class="reveal">Soluciones clave para acelerar resultados.</h2>
+        <div class="cards-grid">
+            <article class="service-card reveal"><h3>Recargas</h3><p>Integración para recargas a celulares de prepago de mexico.</p></article>
+            <article class="service-card reveal delay-1"><h3>Pagos electrónicos</h3><p>Pago de servicios de los proveedores mas importantes del país.</p></article>
+            <article class="service-card reveal delay-2"><h3>Tarjetas Digitales</h3><p>Venta de las principales tarjetas digitales como Xbox, Netflix, Amazon, etc.</p></article>
+            <article class="service-card reveal"><h3>Data & Analytics</h3><p>Tableros ejecutivos para decisiones basadas en evidencia.</p></article>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="section">
+    <div class="container contact-box reveal">
+        <div>
+            <span class="eyebrow">Contáctanos</span>
+            <h2>Conversemos sobre el próximo salto digital de tu organización.</h2>
+            <p>Déjanos tus datos y un especialista te contactará para diseñar una propuesta a tu medida.</p>
+            @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+            {
+                <p class="status-message">@Model.StatusMessage</p>
+            }
+        </div>
+        <form method="post">
+            <label>
+                Nombre
+                <input asp-for="ContactForm.Name" placeholder="Tu nombre" />
+                <span asp-validation-for="ContactForm.Name" class="field-error"></span>
+            </label>
+            <label>
+                Empresa
+                <input asp-for="ContactForm.Company" placeholder="Nombre de empresa" />
+                <span asp-validation-for="ContactForm.Company" class="field-error"></span>
+            </label>
+            <label>
+                Correo
+                <input asp-for="ContactForm.Email" placeholder="correo@empresa.com" />
+                <span asp-validation-for="ContactForm.Email" class="field-error"></span>
+            </label>
+            <button type="submit" class="btn">Enviar solicitud</button>
+        </form>
+    </div>
+</section>

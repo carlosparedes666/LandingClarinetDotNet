@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 170" role="img" aria-labelledby="title desc">
+  <title id="title">Logo ClariNet</title>
+  <desc id="desc">Logotipo azul con antena y texto ClariNet.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d9cdb"/>
+      <stop offset="1" stop-color="#0f4f85"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#g)" stroke="#6ac9ff" stroke-opacity=".35">
+    <path d="M35 153c20-8 18-58 22-92 2-19 2-35 7-35s6 16 8 35c4 34 2 84 22 92v4H35z"/>
+    <rect x="53" y="10" width="9" height="14" rx="4"/>
+    <circle cx="58" cy="66" r="4"/><circle cx="58" cy="82" r="4"/><circle cx="58" cy="98" r="4"/>
+    <path d="M43 0c15 0 26 10 31 23" fill="none" stroke-width="5" stroke-linecap="round"/>
+    <path d="M38 8c11 0 18 8 21 16" fill="none" stroke-width="5" stroke-linecap="round"/>
+    <text x="104" y="118" font-size="98" font-family="Segoe UI,Arial,sans-serif" font-weight="700" fill="url(#g)" stroke="none">ClariNet</text>
+  </g>
+</svg>
